@@ -35,16 +35,16 @@ class TestEnergyAwareRouting:
 
     def test_initialization_invalid_alpha(self):
         """Test that invalid alpha raises ValueError."""
-        with pytest.raises(ValueError, match="alpha must be in \[0, 1\]"):
+        with pytest.raises(ValueError, match=r"alpha must be in \[0, 1\]"):
             EnergyAwareRouting(alpha=-0.1, beta=1.1)
-        with pytest.raises(ValueError, match="alpha must be in \[0, 1\]"):
+        with pytest.raises(ValueError, match=r"alpha must be in \[0, 1\]"):
             EnergyAwareRouting(alpha=1.1, beta=-0.1)
 
     def test_initialization_invalid_beta(self):
         """Test that invalid beta raises ValueError."""
-        with pytest.raises(ValueError, match="beta must be in \[0, 1\]"):
+        with pytest.raises(ValueError, match=r"beta must be in \[0, 1\]"):
             EnergyAwareRouting(alpha=0.5, beta=-0.1)
-        with pytest.raises(ValueError, match="beta must be in \[0, 1\]"):
+        with pytest.raises(ValueError, match=r"beta must be in \[0, 1\]"):
             EnergyAwareRouting(alpha=0.5, beta=1.1)
 
     def test_initialization_sum_not_one(self):

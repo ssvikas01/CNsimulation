@@ -157,7 +157,7 @@ class TestConfigValidation:
 
     def test_routing_config_alpha_out_of_range(self):
         """Test that alpha outside [0,1] raises ValueError."""
-        with pytest.raises(ValueError, match="alpha must be in \[0, 1\]"):
+        with pytest.raises(ValueError, match=r"alpha must be in \[0, 1\]"):
             RoutingConfig(
                 algorithm="energy_aware", alpha=1.5, beta=-0.5
             )
